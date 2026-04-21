@@ -1,0 +1,22 @@
+---
+import SEO from '../components/SEO.astro';
+import '../styles/global.css'; // <--- PASTIKAN INI ADA
+const { title, description, pubDate, heroImage } = Astro.props;
+---
+<html>
+  <head>
+    <SEO title={title} description={description} image={heroImage} />
+  </head>
+  <body class="bg-slate-50 text-slate-900">
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <article class="prose prose-slate lg:prose-xl mx-auto">
+        {heroImage && <img src={heroImage} alt="" class="rounded-xl shadow-lg mb-8" />}
+        <div class="not-prose mb-8">
+           <p class="text-sm text-slate-500">{pubDate.toLocaleDateString()}</p>
+           <h1 class="text-4xl font-bold">{title}</h1>
+        </div>
+        <slot />
+      </article>
+    </main>
+  </body>
+</html>

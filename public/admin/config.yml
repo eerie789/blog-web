@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: your-username/your-repo-name  # Ganti dengan username dan repo GitHub Anda
+  branch: main  # atau branch utama Anda
+
+media_folder: "public/images"  # Folder untuk upload gambar
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Publication Date", name: "pubDate", widget: "datetime" }
+      - { label: "Updated Date", name: "updatedDate", widget: "datetime", required: false }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Canonical URL", name: "canonicalURL", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
