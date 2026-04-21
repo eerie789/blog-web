@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: your-username/your-repo-name  # Ganti dengan username dan repo GitHub Anda
-  branch: main  # atau branch utama Anda
+  repo: eerie789/blog-web
+  branch: main
+  base_url: https://curly-river-70d2.the-great-eri.workers.dev
+  auth_endpoint: auth
 
 media_folder: "public/images"  # Folder untuk upload gambar
 public_folder: "/images"
